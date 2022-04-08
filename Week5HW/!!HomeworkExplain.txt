@@ -1,0 +1,7 @@
+과제를 위한 부분으로 이 클래스 그대로 쓰는걸 강제하면 엄청난 혼란이 오는 클래스 첨부 
+
+인텔리제이 CE 기준 
+PlantUML diagram generator 
+PlantUML integration 을 설치하여 확인 가능 
+
+그냥 얼티밋 에디션 사서 java에서 새로 만들어 보는것이 더 간단할 수 있음 
