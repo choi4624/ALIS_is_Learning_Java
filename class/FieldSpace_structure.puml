@@ -1,0 +1,210 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "AL1S.FieldSpace",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1735866292 { 
+   	label=FieldSpace
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   BattleRoad1574672685[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BattleRoad</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   fieldType: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   maxEntity: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   statusList: String[] [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BattleSpace1574672685[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BattleSpace</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   fieldType: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   maxEntity: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   statusList: String[] [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Road1574672685[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Road</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   nextRouteName: String[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   routeCount: int[] [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SafeArea1574672685[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SafeArea</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   isAttack: boolean [1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+subgraph cluster_2011994428 { 
+   	label=SafeArea
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   FightArea279956101[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FightArea</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   fieldType: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   maxEntity: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   statusList: String[] [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Shop279956101[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Shop</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   itemList: String[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   itemValue: int[] [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+subgraph cluster_2011053 { 
+   	label=AL1S
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   FieldSpace2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FieldSpace</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   spaceName: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   unitCount: int[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   unitList: String[] [0..*]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+FieldSpace2011053 -> BattleSpace1574672685[arrowhead=none, arrowtail=empty, dir=both];
+FieldSpace2011053 -> Road1574672685[arrowhead=none, arrowtail=empty, dir=both];
+FieldSpace2011053 -> SafeArea1574672685[arrowhead=none, arrowtail=empty, dir=both];
+Road1574672685 -> BattleRoad1574672685[arrowhead=none, arrowtail=empty, dir=both];
+SafeArea1574672685 -> FightArea279956101[arrowhead=none, arrowtail=empty, dir=both];
+SafeArea1574672685 -> Shop279956101[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
