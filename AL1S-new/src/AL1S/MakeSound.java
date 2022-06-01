@@ -33,6 +33,8 @@ public static void getPath(String path){
             info = new DataLine.Info(Clip.class, format);
             clip = (Clip)AudioSystem.getLine(info);
             clip.open(stream);
+            FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            volume.setValue(-20.0f);
             clip.start();
                     }
         catch (Exception e){

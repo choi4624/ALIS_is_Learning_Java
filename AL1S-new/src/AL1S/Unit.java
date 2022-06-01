@@ -38,6 +38,7 @@ class UnitHuman extends Unit {
     String weapon;
     String BodyArmor;
     String acc;
+    int defend;
 
 
     protected static class PlayerChara extends UnitHuman{
@@ -58,33 +59,32 @@ class UnitHuman extends Unit {
             this.level = 1;
 
             this.statList = new String[]{"공격력", "방어력", "무게"};
-            this.statValue = new int[]{100, 500, 80};
+            this.statValue = new int[]{400, 500, 80};
         }
 
         public void Stat() {
-            UnitHuman.PlayerChara Light = new UnitHuman.PlayerChara();
-            Light.Alice();
 
-            System.out.println(Light.acc);
-            System.out.println(Light.BodyArmor);
-            System.out.println(Light.MaxHP);
-            System.out.println(Light.MaxMP);
-            System.out.println(Light.weapon);
-            System.out.println(Light.name);
-            System.out.println(Light.exp);
-            System.out.println(Light.level);
-            System.out.println("배열을 사용한 아리스의 스텟이에요");
+            System.out.println("이름 " +this.name);
+            System.out.println("악세사리 " + this.acc);
+            System.out.println("방어유형 "+ this.BodyArmor);
+            System.out.println("신성한 HP "+ this.MaxHP + " *NOTE HP는 스테이지가 끝나면 전투 전 얻었던 최대치로 복구됩니다. ");
+            System.out.println("신비한 MP "+ this.MaxMP + " *NOTE MP는 스테이지가 끝나도 복원되지 않습니다. ");
+            System.out.println("무기 " + this.weapon);
+            System.out.println("레벨" + this.level);
+            System.out.println(this.name+"의 스텟이에요");
 
-            for (String s:Light.statList) {
+            for (String s:this.statList) {
                 System.out.print(s+"    ");
             }
             System.out.println();
-            for (int y:Light.statValue
+            for (int y:this.statValue
             ) {
                 System.out.print(y+"    ");
             }
+
             System.out.println();
-            System.out.println("스텟 표기 끝!");
+            System.out.println("");
+            System.out.println("──────────────────────스텟 표기 끝!──────────────────────");
 
         }
         void upgradeHP(int value){
@@ -96,8 +96,18 @@ class UnitHuman extends Unit {
 
 
     }
-
-    protected UnitHuman Create(int HP, int MP, String name, String weapon, String bodyArmor, String acc){
+    protected void UnitCall(){
+        System.out.println("");
+        System.out.print("HP "+this.MaxHP + " / ");
+        System.out.print("MP "+this.MaxMP + " / ");
+        System.out.print("이름 "+this.name + " / ");
+        System.out.println("무기 "+this.weapon + " / ");
+        System.out.print("악세사리 "+this.acc + " / ");
+        System.out.println("방어형태 "+this.BodyArmor + " / ");
+        System.out.print("방어력 "+this.defend + " / ");
+        System.out.println("");
+    }
+    protected UnitHuman Create(int HP, int MP, String name, String weapon, String bodyArmor, String acc, int defend){
         UnitHuman baked = new UnitHuman();
         baked.MaxHP = HP;
         baked.MaxMP = MP;
@@ -105,6 +115,7 @@ class UnitHuman extends Unit {
         baked.BodyArmor = bodyArmor;
         baked.acc = acc;
         baked.name = name;
+        baked.defend = defend;
 
         return baked;
     }

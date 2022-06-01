@@ -6,10 +6,10 @@ public class Damage {
 
         if (unit.weapon.equals("손"))
             damage = 100;
-        if (unit.weapon.equals("검"))
-            damage = 250;
+        if (unit.weapon.equals("칼"))
+            damage = 800;
         if (unit.weapon.equals("총"))
-            damage = 1000;
+            damage = 2000;
         if (unit.weapon.equals("수상한 막대기"))
             damage = unit.MaxMP;
         if (unit.weapon.equals("HP * MP"))

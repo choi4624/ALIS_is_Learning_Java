@@ -8,7 +8,7 @@ public class Mainexcute {
 
     public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException, InterruptedException {
 
-        String path = "src/files/Pixel_time2.wav";
+        String path = "src/files/BGM/Pixel_time2.wav";
         MakeSound.getPath(path);
         Thread th1 = new Thread(new MakeSound());
         th1.run();
