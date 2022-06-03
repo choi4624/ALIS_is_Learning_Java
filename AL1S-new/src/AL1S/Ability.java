@@ -45,6 +45,13 @@ public class Ability {
             System.out.println("소형에게만 효과. 적 방어력 1당 1 감소");
 
         }
+        void RailGunShoot(UnitHuman fight, UnitHuman.PlayerChara User){
+            if ((fight.BodyArmor.equals("대형")||fight.BodyArmor.equals("소형")) && (User.statValue[1] - fight.defend) > 0)
+                fight.MaxHP = fight.MaxHP - (User.statValue[0] - fight.defend)*6;
+            System.out.println("비장의 한발 effect : "+User.statList[0] +" "+User.statValue[0]+" 만큼의 데미지");
+            System.out.println("대형,소형 모두에게 효과. 적 방어력 1당 1 감소");
+        }
     }
 
+    
 }
