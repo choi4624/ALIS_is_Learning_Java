@@ -17,7 +17,7 @@ public class FifthStage {
 
         // 스테이지 스크립트 불러오기
         FileText txt = new FileText();
-        String path = "src/files/ThirdStage_Script1.txt";
+        String path = "src/files/FifthStage_Script1.txt";
 
         //전투 중, 스크립트 중 효과음
         effect sound = new effect();
