@@ -36,8 +36,8 @@ public class FifthStage {
         System.out.println("방어력 상승!" + alice.statValue[1]);
 
         UnitHuman basic = new UnitHuman().Create(4900, 1350, "기괴한 샴쌍둥이", "총", "대형", "null", 480);
-        Battle forth = new Battle();
+        Battle fifth = new Battle();
 
-        forth.blacksuit4(basic, alice, sound);
+        fifth.blacksuit4(basic, alice, sound);
     }
 }
