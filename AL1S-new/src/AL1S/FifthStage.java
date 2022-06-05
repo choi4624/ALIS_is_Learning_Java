@@ -8,7 +8,7 @@ public class FifthStage {
         MakeSound.stopMusic();
 
         // 새 음악 시작
-        String musicPath = "src/files/BGM/Theme_70.wav";
+        String musicPath = "src/files/BGM/Theme_71.wav";
         MakeSound.getPath(musicPath);
         Runnable r10 = new MakeSound();
         Thread th10 = new Thread(r10);
@@ -32,12 +32,34 @@ public class FifthStage {
         System.out.println("그래도 이 녀석을 상대하려면..");
         System.out.println("방어력을 증가시켜야 더 잘 버틸 수 있겠어..!");
 
-        alice.statValue[1] = +80;
+        alice.statValue[1] = 100+alice.statValue[1];
         System.out.println("방어력 상승!" + alice.statValue[1]);
 
         UnitHuman basic = new UnitHuman().Create(4900, 1350, "기괴한 샴쌍둥이", "총", "대형", "null", 480);
+        UnitHuman basic2 = new UnitHuman().Create(4900, 1350, "기괴한 샴쌍둥이", "총", "대형", "null", 480);
+        UnitHuman basic3 = new UnitHuman().Create(4900, 1350, "기괴한 샴쌍둥이", "총", "대형", "null", 480);
+        UnitHuman basic4 = new UnitHuman().Create(4900, 1350, "기괴한 샴쌍둥이", "총", "대형", "null", 480);
+        UnitHuman basic5 = new UnitHuman().Create(4900, 1350, "기괴한 샴쌍둥이", "총", "대형", "null", 480);
+
         Battle fifth = new Battle();
 
+        int startHP = alice.MaxHP;
         fifth.blacksuit4(basic, alice, sound);
+        alice.statValue[1] = 100+alice.statValue[1];
+        System.out.println("방어력 상승!" + alice.statValue[1]);
+        fifth.blacksuit4(basic2, alice, sound);
+        alice.statValue[1] = 100+alice.statValue[1];
+        System.out.println("방어력 상승!" + alice.statValue[1]);
+        fifth.blacksuit4(basic3, alice, sound);
+        alice.statValue[1] = 100+alice.statValue[1];
+        System.out.println("방어력 상승!" + alice.statValue[1]);
+        fifth.blacksuit4(basic4, alice, sound);
+        alice.statValue[1] = 100+alice.statValue[1];
+        System.out.println("방어력 상승! " + alice.statValue[1]);
+        fifth.blacksuit4(basic5, alice, sound);
+        alice.statValue[1] = alice.statValue[1]-400;
+        System.out.println("방어력 감소!");
+        System.out.println("뭐에요 왜 줬다 뺏어요?");
+        alice.MaxHP = startHP;
     }
 }

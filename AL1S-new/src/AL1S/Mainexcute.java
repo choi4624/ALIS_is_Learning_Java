@@ -20,7 +20,7 @@ public class Mainexcute {
 
         // BGM 한번 트는 스레드
 
-
+        System.out.println("실행을 종료한 위치는 결국 MainExcute 이다.");
 
 
     }

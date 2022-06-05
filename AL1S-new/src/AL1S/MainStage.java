@@ -23,6 +23,7 @@ public class MainStage {
         FileText txt = new FileText();
         txt.start("src/files/MainStage.txt");
         ImagePop.imgPath("../files/alice.png");
+        int end = 0;
         while (true){
 
             ImagePop img = new ImagePop();
@@ -58,8 +59,10 @@ public class MainStage {
                 }
                 case "2" -> {
                     img.remove();
-
+                    SecondStage playing = new SecondStage();
+                    playing.run(player);
                     ImagePop.imgPath("../files/alice.png");
+                    txt.start("src/files/FirstStage_endScript.txt");
                 }
                 case "3" -> {
                     img.remove();
@@ -68,22 +71,26 @@ public class MainStage {
                 }
                 case "4" -> {
                     img.remove();
-
+                    ForthStage playing = new ForthStage();
+                    playing.run(player);
                     ImagePop.imgPath("../files/alice.png");
                 }
                 case "5" -> {
                     img.remove();
-
+FifthStage playing = new FifthStage();
+playing.run(player);
                     ImagePop.imgPath("../files/alice.png");
                 }
                 case "6" -> {
                     img.remove();
-
+                    SixthStage playing = new SixthStage();
+                    playing.run(player);
                     ImagePop.imgPath("../files/alice.png");
                 }
                 case "7" -> {
                     img.remove();
-
+SeventhStage playing = new SeventhStage();
+playing.run(player);
                     ImagePop.imgPath("../files/alice.png");
                 }
                 case "8" -> {
@@ -91,11 +98,19 @@ public class MainStage {
 
                     ImagePop.imgPath("../files/alice.png");
                 }
-                case "9" -> {
+                case "the end" -> {
                     img.remove();
-
+                    EndStage playing = new EndStage();
+                    playing.run(player);
                     ImagePop.imgPath("../files/alice.png");
+                    end = 1;
                 }
+            case "-1" -> {
+                img.remove();
+            System.out.println("시스템 종료, 여태까지 했던 능력치는 다 소멸합니다. ");
+                System.out.println("게임을 오래하셨다면.. 안됐네");
+                return;
+            }
             case "AL1S_IS_LEARNING_JAVA" -> {
                     img.remove();
             }
@@ -108,7 +123,9 @@ public class MainStage {
                     ImagePop.imgPath("../files/alice.png");
                 }
             }
+            if(end == 1)
+                break;
         }
-
+Thread.sleep(100000);
         }
     }

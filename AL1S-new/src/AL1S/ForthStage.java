@@ -31,6 +31,7 @@ public class ForthStage {
         System.out.println("아니 당신은...?");
 
         Quiz forth = new Quiz();
+        forth.Quizzes(alice);
 
     }
 }

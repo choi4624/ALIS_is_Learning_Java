@@ -39,7 +39,7 @@ public class SixthStage {
         path = "src/files/SixthStage_Script2.txt";
         txt.start(path);
 
-        UnitHuman basic = new UnitHuman().Create(250000, 100000, "CHESED", "out of control", "초대형", "시스템 해킹", 10000);
+        UnitHuman basic = new UnitHuman().Create(250000, 10000, "CHESED", "out of control", "초대형", "시스템 해킹", 10000);
         Battle chesed = new Battle();
 
         chesed.sixth(basic, alice, sound);

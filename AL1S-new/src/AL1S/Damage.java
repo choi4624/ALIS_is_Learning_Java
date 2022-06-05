@@ -14,7 +14,8 @@ public class Damage {
             damage = unit.MaxMP;
         if (unit.weapon.equals("HP * MP"))
             damage = (unit.MaxHP* unit.MaxMP);
-
+        if (unit.weapon.equals("out of control"))
+            damage = unit.MaxMP;
     }
 
 }

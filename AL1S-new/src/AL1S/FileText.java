@@ -12,7 +12,7 @@ public class FileText {
         int line;
         while ((line = input.read()) != -1) {
             System.out.print((char) line);
-            Thread.sleep(10);
+            Thread.sleep(5);
         }
     }
 }

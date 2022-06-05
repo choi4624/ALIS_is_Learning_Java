@@ -1,0 +1,310 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "AL1S.SeventhStage",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1510476265 { 
+   	label=UnitHuman
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   PlayerChara647436520[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PlayerChara</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   exp: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   level: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   statList: String[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   statValue: int[] [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ Alice()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ Stat()</TD></TR>
+<TR><TD ALIGN="LEFT" ># upgradeHP(value: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2011053 { 
+   	label=AL1S
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Ability2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Ability</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   behaviorName: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ ErrorRestore(fight: UnitHuman)</TD></TR>
+<TR><TD ALIGN="LEFT" ># RailGunBlaze(fight: UnitHuman, User: PlayerChara)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ SystemHack(fight: UnitHuman, user: PlayerChara)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ powerup(fight: UnitHuman, user: PlayerChara)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Battle2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Battle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   path: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   txt: FileText [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ basicBattle(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ blacksuit1(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ blacksuit3(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ blacksuit4(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" ># sixth(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >- tutorial(fight: UnitHuman, User: PlayerChara, sound: effect, hp: int, mp: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FileText2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FileText</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   path: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># start(path: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MakeSound2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MakeSound</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   BUFFER_SIZE: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   audioFormat: AudioFormat [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   audioStream: AudioInputStream [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   soundFile: File [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   sourceLine: SourceDataLine [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getPath(path: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ killMusic()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ playSound()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ run()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ startMusic()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ stopMusic()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+SeventhStage2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SeventhStage</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ run(alice: PlayerChara)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Unit2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Unit</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   MaxHP: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   MaxMP: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   name: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># HPSetting(I: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># MPSetting(J: int)</TD></TR>
+<TR><TD ALIGN="LEFT" ># UnitCall()</TD></TR>
+<TR><TD ALIGN="LEFT" ># getMaxHP(addHP: int): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UnitHuman2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UnitHuman</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   BodyArmor: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   acc: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   defend: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   weapon: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># Create(HP: int, MP: int, name: String, weapon: String, bodyArmor: String, acc: String, defend: int): UnitHuman</TD></TR>
+<TR><TD ALIGN="LEFT" ># UnitCall()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+effect2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)effect</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ soundEffect(path: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_464145674 { 
+   	label=Ability
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Attack1033957431[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Attack</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   Damage: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># BasicAttack(fight: UnitHuman, User: PlayerChara): int</TD></TR>
+<TR><TD ALIGN="LEFT" ># EnemyAttack(fight: UnitHuman, User: PlayerChara): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Skill1033957431[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Skill</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   HPCost: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   MPCost: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   SkillDamage: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   coolTime: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ ArmorBreak(fight: UnitHuman, User: PlayerChara)</TD></TR>
+<TR><TD ALIGN="LEFT" ># MisticArrow()</TD></TR>
+<TR><TD ALIGN="LEFT" ># RailGunClamp(fight: UnitHuman, User: PlayerChara)</TD></TR>
+<TR><TD ALIGN="LEFT" ># RailGunShoot(fight: UnitHuman, User: PlayerChara)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ coreATK(fight: UnitHuman, User: PlayerChara)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ statup(User: PlayerChara)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Ability2011053 -> Attack1033957431[arrowhead=none, arrowtail=empty, dir=both];
+Ability2011053 -> Skill1033957431[arrowhead=none, arrowtail=empty, dir=both];
+Battle2011053 -> FileText2011053[label="txt
+[0..1]"];
+PlayerChara647436520 -> Unit2011053[label="upgradeHP() -> getMaxHP()"];
+SeventhStage2011053 -> FileText2011053[label="run() -> start()"];
+SeventhStage2011053 -> effect2011053[label="run() -> soundEffect()"];
+Unit2011053 -> UnitHuman2011053[arrowhead=none, arrowtail=empty, dir=both];
+UnitHuman2011053 -> PlayerChara647436520[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

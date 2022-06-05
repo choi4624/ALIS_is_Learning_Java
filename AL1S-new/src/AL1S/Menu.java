@@ -17,6 +17,7 @@ public class Menu implements Runnable {
         while ((line = input.read()) != -1){
             System.out.print((char)line);
         }
+
         System.out.println("한글이 정상적으로 출력되고 있나요?");
 
 
@@ -123,7 +124,7 @@ public class Menu implements Runnable {
                 System.out.println("처음부터 다시 튜토리얼을 해주세요.");
             }
         }
-
+return;
 
     }
 }

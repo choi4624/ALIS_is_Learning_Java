@@ -1,0 +1,132 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "AL1S.FileText",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_2011053 { 
+   	label=AL1S
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Battle2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Battle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   path: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   txt: FileText [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ basicBattle(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ blacksuit1(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ blacksuit3(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ blacksuit4(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" ># sixth(fight: UnitHuman, User: PlayerChara, sound: effect)</TD></TR>
+<TR><TD ALIGN="LEFT" >- tutorial(fight: UnitHuman, User: PlayerChara, sound: effect, hp: int, mp: int)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FileText2011053[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FileText</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   path: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># start(path: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+Battle2011053 -> FileText2011053[label="txt
+[0..1]"];
+    
+}
+@enduml

@@ -18,7 +18,7 @@ public class SeventhStage {
 
         // 스테이지 스크립트 불러오기
         FileText txt = new FileText();
-        String path = "src/files/SeventhStage_Script1.txt";
+        String path = "src/files/SeventhStage_Script.txt";
 
         //전투 중, 스크립트 중 효과음
         effect sound = new effect();
@@ -43,7 +43,7 @@ public class SeventhStage {
 
         UnitHuman basic2 = new UnitHuman().Create(2700, 600,"포악한 마녀2", "총","소형","null", 360 );
         Battle seventh2 = new Battle();
-        seventh2.blacksuit3(basic, alice, sound);
+        seventh2.blacksuit3(basic2, alice, sound);
 
         alice.level++;
         alice.statValue[0] =+ 50;
